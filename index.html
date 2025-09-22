@@ -5,6 +5,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 	<title>Разные разности</title>
+	<script type='text/javascript'>
+		if(window.innerWidth700)
+    location.href="CommentVK.html";
+	</script>
 	<style>
 		.oswald {
 		  font-family: "Oswald", sans-serif;
@@ -89,9 +93,9 @@
 			<div class="menu-button"><a href="Cool.html" class="button-text oswald">Крутые фотки</a></div>
 			<div class="menu-button"><a href="Kontakti.html" class="button-text oswald">Автор</a></div>
 			<div class="menu-button"><a href="https://www.donationalerts.com/r/thermee" class="button-text oswald">Поддержать автора :)</a></div>
-			<div class="menu-button"><a href="Komenti.html" class="button-text oswald">Коменты</a></div>
-			<div><a class="oswald">Добро пожаловать! Вы находитесь на сайте, который был порожден скукой!</a></div>
-			<a style="text-align: right; width: 37%; margin-right: 10px;"><audio controls autoplay loop><source src="Audio3/Vilka.mp3"></audio></a>
+			<div class="menu-button"><a href="CommentVK.html" class="button-text oswald">Коменты</a></div>
+			<div><a class="oswald">Добро пожаловать!</a></div>
+			<a style="text-align: right; width: 60%; margin-right: 10px;"><audio controls loop><source src="Audio3/Vilka.mp3"></audio></a>
 	</header>
 	<main>
 		<div class="post">
@@ -171,53 +175,6 @@
 				<a class="oswald button-text" href="Oster.html">Остерегайтесь!</a>
 			</div>
 		</div>
-
-<div>
-  <script src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"></script>
-  <script type="text/javascript">
-    if ('VKIDSDK' in window) {
-      const VKID = window.VKIDSDK;
-
-      VKID.Config.init({
-        app: 54162585,
-        redirectUrl: 'https://thermee.github.io/TheRMee/index.html',
-        responseMode: VKID.ConfigResponseMode.Callback,
-        source: VKID.ConfigSource.LOWCODE,
-        scope: '', // Заполните нужными доступами по необходимости
-      });
-
-      const floatingOneTap = new VKID.FloatingOneTap();
-
-      floatingOneTap.render({
-        indent: {
-          right: 16
-        },
-        appName: 'Разные Разности комменты',
-        showAlternativeLogin: true
-      })
-      .on(VKID.WidgetEvents.ERROR, vkidOnError)
-      .on(VKID.FloatingOneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
-        const code = payload.code;
-        const deviceId = payload.device_id;
-
-        VKID.Auth.exchangeCode(code, deviceId)
-          .then(vkidOnSuccess)
-          .catch(vkidOnError);
-      });
-    
-      function vkidOnSuccess(data) {
-        floatingOneTap.close();
-        
-        // Обработка полученного результата
-      }
-    
-      function vkidOnError(error) {
-        // Обработка ошибки
-      }
-    }
-  </script>
-</div>
-		
 		<div class="son1 oswald"><a class="son" title="???">GjvjubntJYBghbikbpfvyjq</a></div>
 	</main>
 </body>
