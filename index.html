@@ -86,7 +86,6 @@
 		<div id="menu">
 			<a href="index.html"><img src="https://avatars.mds.yandex.net/i?id=5b0dcbd56019f95ca41da9b44a317d17090e471c-3709311-images-thumbs&n=13" id="logo"></a>
 			<div class="menu-button"><a href="Cats.html" class="button-text oswald">Котики</a></div>
-			<div class="menu-button"><a href="Yaroslav.html" class="button-text oswald">Ярослав Михеев</a></div>
 			<div class="menu-button"><a href="Cool.html" class="button-text oswald">Крутые фотки</a></div>
 			<div class="menu-button"><a href="Kontakti.html" class="button-text oswald">Автор</a></div>
 			<div class="menu-button"><a href="https://www.donationalerts.com/r/thermee" class="button-text oswald">Поддержать автора :)</a></div>
@@ -96,72 +95,130 @@
 	</header>
 	<main>
 		<div class="post">
-			<div class="bl">
+			<div class="bl" title="Котята">
 				<a class="oswald button-text" href="Cats.html">Котики</a>
 			</div>
 		</div>
 
-		<div class="post">
+		<div class="post" title="Ел каки">
 			<div class="bl">
 				<a class="oswald button-text" href="Yaroslav.html">Ярослав Михеев</a>
 			</div>
 		</div>
 
 		<div class="post">
-			<div class="bl">
+			<div class="bl" title="Для РОВНЫХ пацанчиков">
 				<a class="oswald button-text" href="Cool.html">Крутые Фотки</a>
 			</div>
 		</div>
 
 		<div class="post">
-			<div class="bl">
+			<div class="bl" title="Эт я">
 				<a class="oswald button-text" href="Kontakti.html">Автор</a>
 			</div>
 		</div>
 
 		<div class="post">
-			<div class="bl">
+			<div class="bl" title="🥺🥺🥺">
 				<a class="oswald button-text" href="https://www.donationalerts.com/r/thermee">Поддержать автора)))</a>
 			</div>
 		</div>
 
 		<div class="post">
-			<div class="bl">
+			<div class="bl" title="Не напишите свое мнение">
 				<a class="oswald button-text" href="Komenti.html">Коменты</a>
 			</div>
 		</div>
 
 		<div class="post">
-			<div class="bl">
+			<div class="bl" title="Ютубе">
 				<a class="oswald button-text" href="Video.html">Видосы</a>
 			</div>
 		</div>
 
 		<div class="post">
-			<div class="bl">
+			<div class="bl" title="Советую посмотреть">
 				<a class="oswald button-text" href="Kino.html">Кинотеатр</a>
 			</div>
 		</div>
 
 		<div class="post">
-			<div class="bl">
+			<div class="bl" title="Смехуятина">
 				<a class="oswald button-text" href="Anegdot.html">Анекдоты</a>
 			</div>
 		</div>
 
 		<div class="post">
-			<div class="bl">
+			<div class="bl" title="Смехуятина">
+				<a class="oswald button-text" href="Nagrada.html">Новости и Объявления</a>
+			</div>
+		</div>
+
+		<div class="post">
+			<div class="bl" title="Напишите свое мнение">
+				<a class="oswald button-text" href="CommentVK.html">Оставте свой отзыв!</a>
+			</div>
+		</div>
+
+		<div class="post">
+			<div class="bl" title="Это точно настоящий антивирус!">
 				<a class="oswald button-text" href="Virus.html">АНТИВИРУС</a>
 			</div>
 		</div>
 
 		<div class="post">
-			<div class="bl">
+			<div class="bl" title="Pf[jlbnt yf cdjq cnhf[ b hbcr">
 				<a class="oswald button-text" href="Oster.html">Остерегайтесь!</a>
 			</div>
 		</div>
 
-		<div class="son1 oswald"><a class="son">GjvjubntJYBghbikbpfvyjq</a></div>
+<div>
+  <script src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"></script>
+  <script type="text/javascript">
+    if ('VKIDSDK' in window) {
+      const VKID = window.VKIDSDK;
+
+      VKID.Config.init({
+        app: 54162585,
+        redirectUrl: 'https://thermee.github.io/TheRMee/index.html',
+        responseMode: VKID.ConfigResponseMode.Callback,
+        source: VKID.ConfigSource.LOWCODE,
+        scope: '', // Заполните нужными доступами по необходимости
+      });
+
+      const floatingOneTap = new VKID.FloatingOneTap();
+
+      floatingOneTap.render({
+        indent: {
+          right: 16
+        },
+        appName: 'Разные Разности комменты',
+        showAlternativeLogin: true
+      })
+      .on(VKID.WidgetEvents.ERROR, vkidOnError)
+      .on(VKID.FloatingOneTapInternalEvents.LOGIN_SUCCESS, function (payload) {
+        const code = payload.code;
+        const deviceId = payload.device_id;
+
+        VKID.Auth.exchangeCode(code, deviceId)
+          .then(vkidOnSuccess)
+          .catch(vkidOnError);
+      });
+    
+      function vkidOnSuccess(data) {
+        floatingOneTap.close();
+        
+        // Обработка полученного результата
+      }
+    
+      function vkidOnError(error) {
+        // Обработка ошибки
+      }
+    }
+  </script>
+</div>
+		
+		<div class="son1 oswald"><a class="son" title="???">GjvjubntJYBghbikbpfvyjq</a></div>
 	</main>
 </body>
 </html>
